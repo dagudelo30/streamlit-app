@@ -14,7 +14,7 @@ if file is not None:
     if st.button("Ejecutar modelo"):
         datos = df.to_dict(orient="records")
         try:
-            url = "https://ml-api-production.up.railway.app"  # Reemplaza con tu URL real
+            url = "https://ml-api-production.up.railway.app/predict"  # Reemplaza con tu URL real
             response = requests.post(url, json=datos)
             if response.status_code == 200:
                 df["prediccion"] = response.json()["predicciones"]
